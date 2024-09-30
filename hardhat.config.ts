@@ -6,14 +6,9 @@ dotenv.config();
 const config: HardhatUserConfig = {
   solidity: "0.8.24",
   networks: {
-    // for testnet
-    "lisk-sepolia": {
-      url: process.env.LISK_RPC_URL!,
-      accounts: [process.env.ACCOUNT_PRIVATE_KEY!],
-      gasPrice: 1000000000,
-    },
-    scroll: {
-      url: process.env.SCROLL_RPC_URL!,
+   
+    scrollSepolia: {
+      url: `https://scroll-sepolia.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`,
       accounts: [`0x${process.env.ACCOUNT_PRIVATE_KEY!}`],
     },
   },
