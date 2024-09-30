@@ -19,24 +19,21 @@ const config: HardhatUserConfig = {
   },
   
   etherscan: {
-    // Use "123" as a placeholder, because Blockscout doesn't need a real API key, and Hardhat will complain if this property isn't set.
     apiKey: {
-      "lisk-sepolia": "123",
+      scrollSepolia: process.env.ETHERSCAN_API_KEY!,
     },
     customChains: [
       {
-        network: "lisk-sepolia",
-        chainId: 4202,
+        network: 'scrollSepolia',
+        chainId: 534351,
         urls: {
-          apiURL: "https://sepolia-blockscout.lisk.com/api",
-          browserURL: "https://sepolia-blockscout.lisk.com/",
+          apiURL: 'https://api-sepolia.scrollscan.com/api',
+          browserURL: 'https://sepolia.scrollscan.com/',
         },
       },
     ],
   },
-  sourcify: {
-    enabled: false,
-  },
+
 };
 
 export default config;
